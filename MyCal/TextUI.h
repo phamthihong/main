@@ -5,8 +5,6 @@
 class TextUI
 {
 private:
-	static const int MAX_BUFFER_SIZE = 255;
-	//static char buffer[255];
 	static const std::string WELCOME_MSG;
 	static const std::string HELP_MSG;
 	static const std::string UNSCHEDULED_DATE_BAR;
