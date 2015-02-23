@@ -22,6 +22,10 @@ DS::UIObject TaskMaster::addTask(DS::TASK task) {
     //
     //finally, when all is done call Storage::updateStorage(change, updated_tasklist)
     //
+    //Make a UIObject with header text 
+    //"Sucessfully added "<task name here>" to <the date here>.
+    //and TaskList filled with tasks of the particular date only
+    //this will be returned and the TextUI will use it to feedback to user
     return addSuccess;
 }
 
