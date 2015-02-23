@@ -34,6 +34,7 @@
 //
 // "Changes" are used to represent state changes in tasks. Such changes 
 // can result from add, delete, edit, postpone etc.
+// This is passed to the storage component for easy undoing.
 //
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////// "UI OBJECT" //////////////////////////////
