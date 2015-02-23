@@ -45,6 +45,7 @@
 #pragma once
 #include <string>
 #include <vector>
+#include <ctime>
 
 namespace DS {
 	enum CommandType {
@@ -56,22 +57,22 @@ namespace DS {
 	};
 
 	struct TASK {
-		TASK(): isDone(false) {};
+		TASK(): taskID(0), isDone(false) {};
 
 		unsigned taskID;
 		std::string taskName;
-		//DateTime taskDate;
-		//DateTime taskStart;
-		//DateTime taskEnd;
+		tm taskStart;
+		tm taskEnd;
 		bool isDone;
 	};
 
 	struct SINGLE_DAY {
-		//DateTime taskDate;
+		tm taskDate;
 		std::vector<TASK> tasksThisDay;
 	};
 
 	typedef std::vector<SINGLE_DAY>	TaskList;
+	typedef std::vector<SINGLE_DAY>::iterator dayIter;
 
 	struct CHANGES {
 		unsigned taskID;
