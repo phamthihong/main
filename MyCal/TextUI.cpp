@@ -25,11 +25,90 @@
 //
 #include <vector>
 #include <iostream>
+#include <stdio.h>
 #include "TextUI.h"
+#include "boost/format.hpp"
 
+using boost::format;
 
-const std::string TextUI::WELCOME_MSG = "Welcome to MyCal!";
+const std::string TextUI::WELCOME_MSG = "Welcome to MyCal!"; 
 const std::string TextUI::HELP_MSG = "Helpppp";
+const std::string TextUI::UNSCHEDULED_DATE_BAR = 
+	"[Unscheduled Tasks] =================================";
+std::string TextUI::QUALIFIER_DATE_BAR = 
+	"[%1% %2% %3% %4%] ===================================";
+
+std::string TextUI::DEFAULT_DATE_BAR = 
+	"[%1% %2% %3%] =======================================";
+
+bool TextUI::isUnscheduled(tm taskDate) {
+	return taskDate.tm_year == 0;
+}
+
+std::string TextUI::getWkDayName(tm taskDate) {
+	switch(taskDate.tm_wday) {
+		case 0:
+			return "Sun";
+		case 1:
+			return "Mon";
+		case 2:
+			return "Tue";
+		case 3:
+			return "Wed";
+		case 4:
+			return "Thu";
+		case 5:
+			return "Fri";
+		case 6:
+			return "Sat";
+	}
+}
+
+std::string TextUI::getMonthName(tm taskDate) {
+	switch(taskDate.tm_mon) {
+		case 0:
+			return "Jan";
+		case 1:
+			return "Feb";
+		case 2:
+			return "Mar";
+		case 3:
+			return "Apr";
+		case 4:
+			return "May";
+		case 5:
+			return "Jun";
+		case 6:
+			return "Jul";
+		case 7:
+			return "Aug";
+		case 8:
+			return "Sep";
+		case 9:
+			return "Oct";
+		case 10:
+			return "Nov";
+		case 11:
+			return "Dec";
+	}
+}
+
+void TextUI::printDateBar(tm taskDate) {
+	//todo: add support for yesterday, today, tomorrow qualifiers
+	if (isUnscheduled(taskDate)) {
+		std::cout << UNSCHEDULED_DATE_BAR << std::endl << std::endl;
+	} else {
+		std::string wkdayName = getWkDayName(taskDate);
+		std::string monthName = getMonthName(taskDate);
+		std::string day = std::to_string(taskDate.tm_mday);
+		std::cout << format(DEFAULT_DATE_BAR) % wkdayName % monthName % day;
+		std::cout << std::endl << std::endl;
+	}
+}
+
+void TextUI::printTasks(std::vector<DS::TASK> tasks) {
+
+}
 
 void TextUI::printWelcomeMsg() {
 	std::cout << WELCOME_MSG << std::endl;
@@ -46,7 +125,15 @@ std::string TextUI::getInput() {
 }
 
 void TextUI::showOutput(DS::UIObject uiObj) {
-	std::cout << "TextUI: SHOW OUTPUT" << std::endl;
+	std::cout << uiObj.headerText << std::endl;
+
+	DS::TaskList taskList = uiObj.taskList;
+	DS::dayIter iter;
+	for (iter = taskList.begin(); iter != taskList.end(); ++iter) {
+		DS::SINGLE_DAY curDay = *iter;
+		printDateBar(curDay.taskDate);
+		//printTasks(curDay.tasksThisDay);
+	}
 }
 
 TextUI::TextUI(void) {
@@ -56,3 +143,12 @@ TextUI::TextUI(void) {
 TextUI::~TextUI(void) {
 }
 
+/*
+	TEST DATE BAR:
+
+	time_t curTime;
+	struct tm timeInfo;
+	time(&curTime);
+	localtime_s(&timeInfo, &curTime);
+	printDateBar(timeInfo);
+	*/
