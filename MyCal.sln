@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyCal", "MyCal\MyCal.vcxproj", "{CB019C58-D56A-48BC-B2FF-6F4436975FAE}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyCalTestSuite", "MyCalTestSuite\MyCalTestSuite.vcxproj", "{8A64B930-7575-4611-AEB5-325A6805B887}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CB019C58-D56A-48BC-B2FF-6F4436975FAE}.Debug|Win32.ActiveCfg = Debug|Win32
+		{CB019C58-D56A-48BC-B2FF-6F4436975FAE}.Debug|Win32.Build.0 = Debug|Win32
+		{CB019C58-D56A-48BC-B2FF-6F4436975FAE}.Release|Win32.ActiveCfg = Release|Win32
+		{CB019C58-D56A-48BC-B2FF-6F4436975FAE}.Release|Win32.Build.0 = Release|Win32
+		{8A64B930-7575-4611-AEB5-325A6805B887}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8A64B930-7575-4611-AEB5-325A6805B887}.Debug|Win32.Build.0 = Debug|Win32
+		{8A64B930-7575-4611-AEB5-325A6805B887}.Release|Win32.ActiveCfg = Release|Win32
+		{8A64B930-7575-4611-AEB5-325A6805B887}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
