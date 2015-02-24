@@ -1,6 +1,11 @@
 #include "Storage.h"
 
+Storage::Store Storage::_sessionStore;
+unsigned Storage::_curMaxID = 0; 
+std::string Storage::_taskListLoc = "";
+
 void Storage::initStorage() {
+ 
 }
 
 DS::TaskList Storage::getAllTasks() {
@@ -39,3 +44,59 @@ Storage::Storage(void) {
 Storage::~Storage(void) {
 }
 
+void Storage::saveStorageSettings(std::string fileLoc, unsigned maxID) {
+    //save to storageSettings.txt in the following format
+    //taskListLocation: <File Location>
+    //currentMaxID: 5
+    //should overwrite the exisiting file
+}
+
+void Storage::saveRecentChange(DS::CHANGES change) {
+    //should  overwrite the exisiting file
+    //save to mostRecentChange.txt in the following format
+    //taskid: xxx
+    //commandType: edit (postpone/add/delete/confirm/done) 
+
+    //BEFORE
+    //list all task details
+
+   // AFTER
+    //list all task details
+
+}
+void Storage::saveTaskList(DS::TaskList taskList) {
+        //should  overwrite the exisiting file
+
+    //save to the location specified in _taskListLoc
+    //sample format:
+    /*
+    DATE: xxx
+    taskID: 1 
+    taskName: 
+    taskDate: //redundant, but easier to leave it
+    taskStart:
+    taskEnd: 
+    isDone: 
+
+    TaskID: 2
+    //details
+
+    TaskID: 3
+    //details
+
+    DATE: yyy
+    taskID: 7
+    taskName: 
+    taskDate: //redundant, but easier to leave it
+    taskStart:
+    taskEnd: 
+    isDone: 
+
+    TaskID: 10
+    //details
+
+    TaskID: 11
+    //details
+    */
+
+ }
