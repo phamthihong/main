@@ -67,6 +67,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Controller.cpp" />
+    <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Storage.cpp" />
     <ClCompile Include="TaskMaster.cpp" />
@@ -75,6 +76,7 @@
   <ItemGroup>
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DataStructure.h" />
+    <ClInclude Include="Interpreter.h" />
     <ClInclude Include="Storage.h" />
     <ClInclude Include="TaskMaster.h" />
     <ClInclude Include="TextUI.h" />
