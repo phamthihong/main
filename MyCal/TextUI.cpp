@@ -61,6 +61,8 @@ std::string TextUI::getWkDayName(tm taskDate) {
 			return "Fri";
 		case 6:
 			return "Sat";
+        default:
+            return "Err";
 	}
 }
 
@@ -90,6 +92,8 @@ std::string TextUI::getMonthName(tm taskDate) {
 			return "Nov";
 		case 11:
 			return "Dec";
+        default:
+            return "Err"; //throw exception?
 	}
 }
 
@@ -112,6 +116,15 @@ void TextUI::printTasks(std::vector<DS::TASK> tasks) {
 
 void TextUI::printWelcomeMsg() {
 	std::cout << WELCOME_MSG << std::endl;
+    
+	//TEST DATE BAR:
+
+	time_t curTime;
+	struct tm timeInfo;
+	time(&curTime);
+	localtime_s(&timeInfo, &curTime);
+	printDateBar(timeInfo);
+	
 }
 
 void TextUI::printHelp() {
@@ -143,12 +156,3 @@ TextUI::TextUI(void) {
 TextUI::~TextUI(void) {
 }
 
-/*
-	TEST DATE BAR:
-
-	time_t curTime;
-	struct tm timeInfo;
-	time(&curTime);
-	localtime_s(&timeInfo, &curTime);
-	printDateBar(timeInfo);
-	*/
