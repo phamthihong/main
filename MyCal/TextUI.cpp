@@ -13,15 +13,15 @@
 //
 // Tasks due this week:      <---- THIS IS THE "HEADER TEXT"
 //
-// [Unscheduled Tasks] =================================	<--- DATE BAR
+// [Unscheduled Tasks] =================================    <--- DATE BAR
 //
-// 1.  ----------------		comp club meeting				<--- TASK
+// 1.  ----------------	    comp club meeting			    <--- TASK
 //
-// [Today Fri Jan 1] ===================================	<--- DATE BAR
+// [Today Fri Jan 1] ===================================    <--- DATE BAR
 //
-// 2.  ----------------		Remember to bring pencil		<--- TASK
-// 3. [8:45am - 11:30am]	Brunch with Jane				<--- TASK  
-// 4. [12pm]				Submit CS2103 CE2				<--- TASK
+// 2.  ----------------	    Remember to bring pencil	    <--- TASK
+// 3. [8:45am - 11:30am]    Brunch with Jane			    <--- TASK  
+// 4. [12pm]			    Submit CS2103 CE2			    <--- TASK
 //
 #include <vector>
 #include <iostream>
