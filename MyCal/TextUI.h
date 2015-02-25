@@ -11,11 +11,12 @@ private:
 	static std::string QUALIFIER_DATE_BAR;
 	static std::string DEFAULT_DATE_BAR;
 
-	static bool isUnscheduled(tm taskDate);
-	static std::string getWkDayName(tm taskDate);
-	static std::string getMonthName(tm taskDate);
-	static void printDateBar(tm taskDate);
-	static void printTasks(std::vector<DS::TASK> tasks);
+    static struct tm convertToLocalTime(const time_t &taskDate); 
+	static bool isUnscheduled(const time_t &taskDate);
+	static std::string getWkDayName(const time_t &taskDate);
+	static std::string getMonthName(const time_t &taskDate);
+	static void printDateBar(const time_t &taskDate);
+	static void printTasks(const std::vector<DS::TASK> &tasks);
 
 public:
 	static void printWelcomeMsg();

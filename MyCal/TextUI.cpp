@@ -41,12 +41,20 @@ std::string TextUI::QUALIFIER_DATE_BAR =
 std::string TextUI::DEFAULT_DATE_BAR = 
 	"[%1% %2% %3%] =======================================";
 
-bool TextUI::isUnscheduled(tm taskDate) {
-	return taskDate.tm_year == 0;
+struct tm TextUI::convertToLocalTime(const time_t &taskDate) {
+    struct tm tmStruct;
+    localtime_s(&tmStruct, &taskDate);
+    return (tmStruct);
 }
 
-std::string TextUI::getWkDayName(tm taskDate) {
-	switch(taskDate.tm_wday) {
+bool TextUI::isUnscheduled(const time_t &taskDate) {
+    struct tm localTime = convertToLocalTime(taskDate);
+	return (localTime).tm_year == 0;
+}
+
+std::string TextUI::getWkDayName(const time_t &taskDate) {
+    struct tm localTime = convertToLocalTime(taskDate);
+	switch(localTime.tm_wday) {
 		case 0:
 			return "Sun";
 		case 1:
@@ -66,8 +74,9 @@ std::string TextUI::getWkDayName(tm taskDate) {
 	}
 }
 
-std::string TextUI::getMonthName(tm taskDate) {
-	switch(taskDate.tm_mon) {
+std::string TextUI::getMonthName(const time_t &taskDate) {
+    struct tm localTime = convertToLocalTime(taskDate);
+	switch(localTime.tm_mon) {
 		case 0:
 			return "Jan";
 		case 1:
@@ -97,20 +106,21 @@ std::string TextUI::getMonthName(tm taskDate) {
 	}
 }
 
-void TextUI::printDateBar(tm taskDate) {
+void TextUI::printDateBar(const time_t &taskDate) {
 	//todo: add support for yesterday, today, tomorrow qualifiers
 	if (isUnscheduled(taskDate)) {
 		std::cout << UNSCHEDULED_DATE_BAR << std::endl << std::endl;
 	} else {
 		std::string wkdayName = getWkDayName(taskDate);
 		std::string monthName = getMonthName(taskDate);
-		std::string day = std::to_string(taskDate.tm_mday);
+        struct tm localTime = convertToLocalTime(taskDate);
+		std::string day = std::to_string(localTime.tm_mday);
 		std::cout << format(DEFAULT_DATE_BAR) % wkdayName % monthName % day;
 		std::cout << std::endl << std::endl;
 	}
 }
 
-void TextUI::printTasks(std::vector<DS::TASK> tasks) {
+void TextUI::printTasks(const std::vector<DS::TASK> &tasks) {
 
 }
 
@@ -120,10 +130,8 @@ void TextUI::printWelcomeMsg() {
 	//TEST DATE BAR:
 
 	time_t curTime;
-	struct tm timeInfo;
-	time(&curTime);
-	localtime_s(&timeInfo, &curTime);
-	printDateBar(timeInfo);
+    time(&curTime);
+	printDateBar(curTime);
 	
 }
 

@@ -54,13 +54,13 @@ namespace DS {
 
 		unsigned taskID;
 		std::string taskName;
-		tm taskStart;
-		tm taskEnd;
+		time_t taskStart;
+		time_t taskEnd;
 		bool isDone;
 	};
 
 	struct SINGLE_DAY {
-		tm taskDate;
+		time_t taskDate;
 		std::vector<TASK> tasksThisDay;
 	};
 
