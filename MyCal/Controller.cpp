@@ -24,8 +24,11 @@ DS::UIObject Controller::handleInput(std::string input) {
 	DS::TASK task;
 	task.taskID = 1;
 	task.taskName = "eat hamburger";
+    time(&task.taskStart);
+    time(&task.taskEnd);
 
 	DS::SINGLE_DAY singleDay;
+    singleDay.taskDate = task.taskStart;
 	singleDay.tasksThisDay.push_back(task);
 
 	DS::TaskList myTaskList;
