@@ -1,6 +1,11 @@
 #include "Controller.h"
 #include "TextUI.h"
 #include "DataStructure.h"
+#include "Storage.h"
+
+void cleanMyCal() {
+    delete storageObj;
+}
 
 void initMyCal() {
 	//Perform initial setup
@@ -8,6 +13,7 @@ void initMyCal() {
 	TextUI::printWelcomeMsg();
 }
 
+Storage *storageObj = new Storage;
 
 int main(int argc, char *argv[]) {
 	
@@ -15,7 +21,7 @@ int main(int argc, char *argv[]) {
 
 	initMyCal();
 	
-	while (true) {
+	while (controllerService.isRunning()) {
 		std::string userInput;
 		userInput = TextUI::getInput();
 
@@ -25,6 +31,7 @@ int main(int argc, char *argv[]) {
 		TextUI::showOutput(controllerOutput);
 	}
 
+    cleanMyCal();
 
 	return 0;
 }
