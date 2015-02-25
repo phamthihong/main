@@ -11,5 +11,5 @@ public:
     DS::UIObject undoTask(); //do later
 
 	TaskMaster(void);
-	virtual ~TaskMaster(void);
+	~TaskMaster(void);
 };
