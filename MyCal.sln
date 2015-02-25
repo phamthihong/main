@@ -2,8 +2,22 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyCal", "MyCal\MyCal.vcxproj", "{CB019C58-D56A-48BC-B2FF-6F4436975FAE}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF} = {D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF}
+	EndProjectSection
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyCalTestSuite", "MyCalTestSuite\MyCalTestSuite.vcxproj", "{8A64B930-7575-4611-AEB5-325A6805B887}"
+	ProjectSection(ProjectDependencies) = postProject
+		{8523459C-AA5B-47BB-B367-3DE39D0AE156} = {8523459C-AA5B-47BB-B367-3DE39D0AE156}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Storage", "Storage\Storage.vcxproj", "{8523459C-AA5B-47BB-B367-3DE39D0AE156}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TextUI", "TextUI\TextUI.vcxproj", "{D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Interpreter", "Interpreter\Interpreter.vcxproj", "{7E930F3C-D8D1-4C60-9018-9EBBCE7A0A99}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "TaskMaster", "TaskMaster\TaskMaster.vcxproj", "{2C173256-F1A1-418F-AD91-055F8A7BC84C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,6 +33,22 @@ Global
 		{8A64B930-7575-4611-AEB5-325A6805B887}.Debug|Win32.Build.0 = Debug|Win32
 		{8A64B930-7575-4611-AEB5-325A6805B887}.Release|Win32.ActiveCfg = Release|Win32
 		{8A64B930-7575-4611-AEB5-325A6805B887}.Release|Win32.Build.0 = Release|Win32
+		{8523459C-AA5B-47BB-B367-3DE39D0AE156}.Debug|Win32.ActiveCfg = Debug|Win32
+		{8523459C-AA5B-47BB-B367-3DE39D0AE156}.Debug|Win32.Build.0 = Debug|Win32
+		{8523459C-AA5B-47BB-B367-3DE39D0AE156}.Release|Win32.ActiveCfg = Release|Win32
+		{8523459C-AA5B-47BB-B367-3DE39D0AE156}.Release|Win32.Build.0 = Release|Win32
+		{D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF}.Debug|Win32.ActiveCfg = Debug|Win32
+		{D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF}.Debug|Win32.Build.0 = Debug|Win32
+		{D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF}.Release|Win32.ActiveCfg = Release|Win32
+		{D9797DC5-BB94-41FF-B9DC-C9B1D79AB7CF}.Release|Win32.Build.0 = Release|Win32
+		{7E930F3C-D8D1-4C60-9018-9EBBCE7A0A99}.Debug|Win32.ActiveCfg = Debug|Win32
+		{7E930F3C-D8D1-4C60-9018-9EBBCE7A0A99}.Debug|Win32.Build.0 = Debug|Win32
+		{7E930F3C-D8D1-4C60-9018-9EBBCE7A0A99}.Release|Win32.ActiveCfg = Release|Win32
+		{7E930F3C-D8D1-4C60-9018-9EBBCE7A0A99}.Release|Win32.Build.0 = Release|Win32
+		{2C173256-F1A1-418F-AD91-055F8A7BC84C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{2C173256-F1A1-418F-AD91-055F8A7BC84C}.Debug|Win32.Build.0 = Debug|Win32
+		{2C173256-F1A1-418F-AD91-055F8A7BC84C}.Release|Win32.ActiveCfg = Release|Win32
+		{2C173256-F1A1-418F-AD91-055F8A7BC84C}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

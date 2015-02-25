@@ -38,17 +38,19 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>C:\Users\YanYi\Documents\Visual Studio 2012\Projects\MyCal\Storage;$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>C:\Program Files\boost\boost_1_57_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Users\YanYi\Documents\Visual Studio 2012\Projects\MyCal\MyCal;C:\Users\YanYi\Documents\Visual Studio 2012\Projects\MyCal\Storage;C:\Program Files\boost\boost_1_57_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
-      <AdditionalLibraryDirectories>C:\Program Files\boost\boost_1_57_0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\Users\YanYi\Documents\Visual Studio 2012\Projects\MyCal\MyCal;C:\Program Files\boost\boost_1_57_0;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -67,19 +69,19 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Controller.cpp" />
-    <ClCompile Include="Interpreter.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Storage.cpp" />
-    <ClCompile Include="TaskMaster.cpp" />
-    <ClCompile Include="TextUI.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Controller.h" />
     <ClInclude Include="DataStructure.h" />
-    <ClInclude Include="Interpreter.h" />
-    <ClInclude Include="Storage.h" />
-    <ClInclude Include="TaskMaster.h" />
-    <ClInclude Include="TextUI.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Storage\Storage.vcxproj">
+      <Project>{8523459c-aa5b-47bb-b367-3de39d0ae156}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\TextUI\TextUI.vcxproj">
+      <Project>{d9797dc5-bb94-41ff-b9dc-c9b1d79ab7cf}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
