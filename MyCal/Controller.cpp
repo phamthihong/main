@@ -12,6 +12,10 @@ DS::CommandType Controller::determineCmdType(std::string cmdTypeString) {
     return DS::ADD; //example
 }
 
+const bool Controller::isRunning() {
+    return _isRunning;
+}
+
 DS::UIObject Controller::handleInput(std::string input) {
     std::string cmdTypeString = getFirstWord(input);
     DS::CommandType commandType = determineCmdType(input);
@@ -19,6 +23,8 @@ DS::UIObject Controller::handleInput(std::string input) {
     switch (commandType) {
 
     }*/
+
+    //If user exits, set _isRunning to false
 
     // below is just a sample uiobj. 
 	DS::TASK task;
@@ -41,7 +47,7 @@ DS::UIObject Controller::handleInput(std::string input) {
 	return sampleUIObj;
 }
 
-Controller::Controller(void) {
+Controller::Controller(void): _isRunning(true) {
 }
 
 
