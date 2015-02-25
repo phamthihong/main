@@ -10,16 +10,8 @@
 //
 // A "Single Day" struct models all the tasks in a single calendar day.
 // It comprises a variable taskDate (representing the date of the day
-// we are modeling) and a vector of Tasks for that day.
-// An example is shown below:
-// 
-// Sucessfully added "Submit CS2103 CE2" to today.			<--- HEADER TEXT
-//
-// [Today Fri Jan 1] ===================================	<--- DATE BAR
-//
-// 2.  ----------------		Remember to bring pencil		<--- TASK
-// 3. [8:45am - 11:30am]	Brunch with Jane				<--- TASK  
-// 4. [12pm]				Submit CS2103 CE2				<--- TASK
+// we are modeling) and a vector of Tasks for that day. Because the UI
+// groups tasks by days, this is a convenient representation. 
 //
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////////// "TASK LIST" //////////////////////////////
