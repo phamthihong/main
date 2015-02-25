@@ -1,13 +1,5 @@
 #include "Storage.h"
 
-Storage::Store Storage::_sessionStore;
-unsigned Storage::_curMaxID = 0; 
-std::string Storage::_taskListLoc = "";
-
-void Storage::initStorage() {
- 
-}
-
 DS::TaskList Storage::getAllTasks() {
     return _sessionStore.back();
 }
@@ -69,11 +61,11 @@ void Storage::saveTaskList(DS::TaskList taskList) {
 
     //save to the location specified in _taskListLoc
     //sample format:
-    /*
-    DATE: xxx
+    /*    
+    [date xxx]
     taskID: 1 
     taskName: 
-    taskDate: //redundant, but easier to leave it
+    taskDate: 
     taskStart:
     taskEnd: 
     isDone: 
@@ -84,19 +76,13 @@ void Storage::saveTaskList(DS::TaskList taskList) {
     TaskID: 3
     //details
 
-    DATE: yyy
+    [date yyy]
     taskID: 7
     taskName: 
     taskDate: //redundant, but easier to leave it
     taskStart:
     taskEnd: 
     isDone: 
-
-    TaskID: 10
-    //details
-
-    TaskID: 11
-    //details
     */
 
  }
