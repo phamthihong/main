@@ -15,12 +15,12 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\MyCal\TaskMaster.h">
+    <ClInclude Include="TaskMaster.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\MyCal\TaskMaster.cpp">
+    <ClCompile Include="TaskMaster.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
