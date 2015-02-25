@@ -68,7 +68,6 @@ namespace DS {
 	typedef std::vector<SINGLE_DAY>::iterator dayIter;
 
 	struct CHANGES {
-		unsigned taskID;
 		CommandType cmdType;
 		TASK before;
 		TASK after;
