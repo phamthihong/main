@@ -10,7 +10,7 @@ private:
     DS::CommandType determineCmdType(std::string cmdTypeString);
 public:
 
-    const bool isRunning();
+    bool isRunning() const;
 	DS::UIObject handleInput(std::string input);
 
 	Controller(void);

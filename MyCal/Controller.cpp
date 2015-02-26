@@ -12,7 +12,7 @@ DS::CommandType Controller::determineCmdType(std::string cmdTypeString) {
     return DS::ADD; //example
 }
 
-const bool Controller::isRunning() {
+bool Controller::isRunning() const {
     return _isRunning;
 }
 
