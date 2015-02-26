@@ -14,6 +14,7 @@ private:
 	static bool isUnscheduled(tm taskDate);
 	static std::string getWkDayName(tm taskDate);
 	static std::string getMonthName(tm taskDate);
+	static std::string getTimeName(tm taskTime);
 	static void printDateBar(tm taskDate);
 	static void printTasks(std::vector<DS::TASK> tasks);
 
