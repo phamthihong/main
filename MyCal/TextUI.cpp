@@ -97,6 +97,45 @@ std::string TextUI::getMonthName(tm taskDate) {
 	}
 }
 
+
+std::string TextUI::getTimeName(tm taskTime) {
+	std::string timeString = "";
+	std::string amPm = "";
+	if(taskTime.tm_hour >= 12)
+	{
+		if(taskTime.tm_hour == 12)
+		{
+			timeString =  std::to_string(taskTime.tm_hour);
+			amPm = "pm";
+		}
+		else
+		{
+			timeString =  std::to_string(taskTime.tm_hour-12);
+			amPm = "pm";
+		}
+	}
+	else
+	{
+		if(taskTime.tm_hour == 0)
+		{
+			timeString =  "12";
+			amPm = "am";
+		}
+		else
+		{
+			timeString =  std::to_string(taskTime.tm_hour);
+			amPm = "am";
+		}
+	}
+	if(taskTime.tm_min > 0)
+	{
+		timeString = timeString + ":" std::to_string(taskTime.tm_min);
+	}
+	timeString = timeString + amPm;
+	return timeString;
+	
+}
+
 void TextUI::printDateBar(tm taskDate) {
 	//todo: add support for yesterday, today, tomorrow qualifiers
 	if (isUnscheduled(taskDate)) {
@@ -112,6 +151,37 @@ void TextUI::printDateBar(tm taskDate) {
 
 void TextUI::printTasks(std::vector<DS::TASK> tasks) {
 
+	for (std::vector<DS::TASK>::iterator it = tasks.begin() ; it != tasks.end(); ++it)
+	{
+		DS::TASK data = *it;
+		std::string timeStart = "";
+		if(!isUnscheduled(data.taskStart))
+		{
+			timeStart = getTimeName(data.taskStart);
+		}
+		std::string timeEnd = "";
+		if(!isUnscheduled(data.taskEnd))
+		{
+			timeEnd = getTimeName(data.taskEnd);
+		}
+		std::string timePrint = "";
+		if(timeStart == "" && timeEnd == "")
+		{
+			timePrint = "----------------";
+		}
+		else if(timeEnd == "")
+		{
+			timePrint = "["+timeStart+"]";
+		}
+		else
+		{
+			timePrint = "["+timeStart+" - "+timeEnd+"]";
+		}
+
+
+		std::cout << data.taskID << "." << '\t' << timePrint << '\t' << data.taskName << std::endl;
+	}
+	std::cout << std::endl;
 }
 
 void TextUI::printWelcomeMsg() {
@@ -123,7 +193,7 @@ void TextUI::printWelcomeMsg() {
 	struct tm timeInfo;
 	time(&curTime);
 	localtime_s(&timeInfo, &curTime);
-	printDateBar(timeInfo);
+	//printDateBar(timeInfo);
 	
 }
 
@@ -145,7 +215,7 @@ void TextUI::showOutput(DS::UIObject uiObj) {
 	for (iter = taskList.begin(); iter != taskList.end(); ++iter) {
 		DS::SINGLE_DAY curDay = *iter;
 		printDateBar(curDay.taskDate);
-		//printTasks(curDay.tasksThisDay);
+		printTasks(curDay.tasksThisDay);
 	}
 }
 
