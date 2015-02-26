@@ -5,10 +5,10 @@
 
 class Storage {
 public:
-    DS::TaskList getAllTasks();
-	void updateStorage(DS::CHANGES changes, DS::TaskList taskList);
+    DS::TaskList getAllTasks() const;
+    void updateStorage(DS::CHANGES changes, DS::TaskList taskList);
     DS::CHANGES undoLastAction();
-	unsigned getMaxID();
+    unsigned getMaxID() const;
 
 	Storage(void);
 	~Storage(void);

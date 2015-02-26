@@ -1,6 +1,6 @@
 #include "Storage.h"
 
-DS::TaskList Storage::getAllTasks() {
+DS::TaskList Storage::getAllTasks() const {
     return _sessionStore.back();
 }
 
@@ -25,7 +25,7 @@ DS::CHANGES Storage::undoLastAction() {
     }
 }
 
-unsigned Storage::getMaxID() {
+unsigned Storage::getMaxID() const {
 	return _curMaxID;
 }
 

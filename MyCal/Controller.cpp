@@ -1,14 +1,14 @@
 #include <sstream>
 #include "Controller.h"
 
-std::string Controller::getFirstWord(std::string userCmd) {
+std::string Controller::getFirstWord(std::string userCmd) const {
 	std::istringstream iss(userCmd);
 	std::string firstWord;
 	iss >> firstWord;
 	return firstWord;
 };
 
-DS::CommandType Controller::determineCmdType(std::string cmdTypeString) {
+DS::CommandType Controller::determineCmdType(std::string cmdTypeString) const {
     return DS::ADD; //example
 }
 
