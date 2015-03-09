@@ -68,9 +68,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Task.h" />
+    <ClInclude Include="TaskList.h" />
     <ClInclude Include="TaskMaster.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Task.cpp" />
+    <ClCompile Include="TaskList.cpp" />
     <ClCompile Include="TaskMaster.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
