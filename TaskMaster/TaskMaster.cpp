@@ -1,6 +1,6 @@
 #include "TaskMaster.h"
 #include "Storage.h"
-
+/*
 DS::UIObject TaskMaster::addTask(DS::TASK task) {
     DS::UIObject addSuccess;
     DS::TaskList allTasks = storageObj->getAllTasks();
@@ -62,3 +62,4 @@ TaskMaster::TaskMaster(void) {
 TaskMaster::~TaskMaster(void) {
 }
 
+*/

@@ -55,9 +55,9 @@ std::string TaskList::toString() const {
     constTaskIt it;
     for (it = _taskList.begin(); it != _taskList.end(); ++it) {
         oss << it->getTaskName() << std::endl;
-        oss << it->getDateStr() << std::endl;
+        oss << it->getDateStr() << std::endl ;
         oss << it->getBeginStr() << " - ";
-        oss << it->getEndStr() << std:: endl << std::endl;
+        oss << it->getEndStr() << std::endl << std::endl;
     }
 
     return oss.str();

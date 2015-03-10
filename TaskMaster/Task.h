@@ -27,11 +27,11 @@ public:
     void setTaskID(unsigned id);
 
 private:
+    unsigned _taskID;
     std::string _taskName;
-    bool _isFloating;
     time_t _taskBegin;
     time_t _taskEnd;
+    bool _isFloating;
     bool _isDone;
-    unsigned _taskID;
 };
 

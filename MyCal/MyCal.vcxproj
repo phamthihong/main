@@ -46,7 +46,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <AdditionalIncludeDirectories>$(SolutionDir)/Utilities;$(SolutionDir)/Controller;$(SolutionDir)/TextUI;$(SolutionDir)/Storage;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)/Utilities;$(SolutionDir)/Controller;$(SolutionDir)/TextUI;$(SolutionDir)/Storage;$(SolutionDir)/TaskMaster;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -72,6 +72,9 @@
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Command\Command.vcxproj">
+      <Project>{6f3d4173-e831-4527-b82e-113a7c0af81d}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\Controller\Controller.vcxproj">
       <Project>{a8e750c9-bd07-433a-a3eb-1a4f6a9d1951}</Project>
     </ProjectReference>

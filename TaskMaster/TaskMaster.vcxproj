@@ -69,7 +69,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Task.h" />
-    <ClInclude Include="TaskList.h" />
+    <ClInclude Include="TaskList.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="TaskMaster.h" />
   </ItemGroup>
   <ItemGroup>
