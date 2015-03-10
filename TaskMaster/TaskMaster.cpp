@@ -30,10 +30,16 @@ DS::UIObject TaskMaster::addTask(DS::TASK task) {
 }
 
 DS::UIObject TaskMaster::deleteTask(DS::TASK task) {
-    DS::UIObject delSuccess;
-
-
-
+   DS::UIObject delSuccess;
+	DS::TaskList allTasks = storageObj->getAllTasks();
+    DS::dayIter iter;
+	for (iter = taskList.begin(); iter != taskList.end(); ++iter) {
+		DS::SINGLE_DAY curDay = *iter;
+		if (task.taskID == *iter){
+			taskList.erase(*iter);
+			break;
+		}
+	}
     return delSuccess;
 }
 
