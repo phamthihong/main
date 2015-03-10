@@ -1,6 +1,6 @@
 #pragma once
 #include <string>
-#include "DataStructure.h"
+#include "UIObject.h"
 
 class TextUI
 {
@@ -17,14 +17,14 @@ private:
 	static std::string getMonthName(const time_t &taskDate);
     static std::string getTimeName(const time_t &taskDate);
 	static void printDateBar(const time_t &taskDate);
-	static void printTasks(const std::vector<DS::TASK> &tasks);
+	//static void printTasks(const std::vector<DS::TASK> &tasks);
 
 public:
 	static void printWelcomeMsg();
 	static void printHelp();
 
 	static std::string getInput();
-	static void showOutput(DS::UIObject uiObj);
+	static void showOutput(UIObject uiObj);
 
 	TextUI(void);
 	~TextUI(void);

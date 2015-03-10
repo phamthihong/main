@@ -158,7 +158,7 @@ void TextUI::printDateBar(const time_t &taskDate) {
 	    std::cout << std::endl << std::endl;
     }
 }
-
+/*
 void TextUI::printTasks(const std::vector<DS::TASK> &tasks) {
     std::vector<DS::TASK>::const_iterator it;
 	for (it = tasks.begin() ; it != tasks.end(); ++it)
@@ -193,7 +193,7 @@ void TextUI::printTasks(const std::vector<DS::TASK> &tasks) {
 	}
 	std::cout << std::endl;
 }
-
+*/
 void TextUI::printWelcomeMsg() {
 	std::cout << WELCOME_MSG << std::endl;
     
@@ -213,7 +213,7 @@ std::string TextUI::getInput() {
 	std::cin >> userInput;
 	return userInput;
 }
-
+/*
 void TextUI::showOutput(DS::UIObject uiObj) {
 	std::cout << uiObj.headerText << std::endl;
 
@@ -224,7 +224,7 @@ void TextUI::showOutput(DS::UIObject uiObj) {
 		printDateBar(curDay.taskDate);
 		printTasks(curDay.tasksThisDay);
 	}
-}
+}*/
 
 TextUI::TextUI(void) {
 }
